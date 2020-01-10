@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset = "UTF-8"
+  <title>HR Analytics</title>
+</head>
+
+<body>
+ <div class="login">
+	<h1 style="bold;">Offer Dropout Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="int" name="Notice Period" placeholder="Notice Period" required="required" /> <br>
+        <input type="int" name="Experience" placeholder="Experience" required="required" /> <br>
+		<! –– <input type="text" name="sales in second month" placeholder="sales in second month" required="required" /> ––>
+        <button type="Submit" class="btn btn-primary btn-block btn-large">Check probabilty of Dropout: </button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>
